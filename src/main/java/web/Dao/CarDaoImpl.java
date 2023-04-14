@@ -28,6 +28,9 @@ public class CarDaoImpl implements CarDao {
         if (count == null) {
             return carList;
         }
+        if (count <= 0){
+            return Collections.emptyList();
+        }
         return carList.stream().limit(count).collect(Collectors.toList());
     }
 }
